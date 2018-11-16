@@ -1,5 +1,31 @@
 # FLUKES
 
+## About
+This repository is for the replication of our published paper [FLUKES: Autonomous Log Forensics, Intelligence and Visualization Tool] on Conference: International Conference on Future Networks and Distributed Systems ICFNDS '17 at Cambridge University, UK.  For citation use [ACM Digital Library].
+
+## BibTeX
+
+> @inproceedings{Aldwairi:2017:FAL:3102304.3102337,
+ author = {Aldwairi, Monther and Alsaadi, Hesham H.},
+ title = {FLUKES: Autonomous Log Forensics, Intelligence and Visualization Tool},
+ booktitle = {Proceedings of the International Conference on Future Networks and Distributed Systems},
+ series = {ICFNDS '17},
+ year = {2017},
+ isbn = {978-1-4503-4844-7},
+ location = {Cambridge, United Kingdom},
+ pages = {33:1--33:6},
+ articleno = {33},
+ numpages = {6},
+ url = {http://doi.acm.org/10.1145/3102304.3102337},
+ doi = {10.1145/3102304.3102337},
+ acmid = {3102337},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {D3, Intrusion detection, intrusion prevention, log forensics, visualization},
+} 
+
+Our whole pipeline is listed as follows.
+
 ## 1.1 Overview
 An automatic reserved engineering threats detection tool “FLUKS”. The tool optimizes and extracts intelligent threat modules using a special designed machine learning algorithm technique, which allows forensic experts to visualize and explore different threats monitored by firewall, IDS/IPS and anti-virus server attacks. When a content of a file is loaded into FLUKS, a representative summary is executed with least significant attacks. It distinguishes the trace changes found in different attacks arc and re-routes the trails of routes back to origin source of attack. Forensic investigators can then determine a set of certain fields relevant to the attack according to the corresponding target.
 
@@ -79,3 +105,5 @@ app.run(host='0.0.0.0', port=80)
 [Install virtualenv]: http://flask.pocoo.org/docs/1.0/installation/#install-install-virtualenv
 [venv]: https://docs.python.org/3/library/venv.html#module-venv
 [here]: http://flask.pocoo.org/docs/1.0/installation/#install-create-env
+[FLUKES: Autonomous Log Forensics, Intelligence and Visualization Tool]: https://www.researchgate.net/publication/318543033_FLUKES_Autonomous_Log_Forensics_Intelligence_and_Visualization_Tool
+[ACM Digital Library]: https://dl.acm.org/citation.cfm?doid=3102304.3102337
