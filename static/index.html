@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="Zayed University" />
+    <meta name="Description" content="Dashbored" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!--Favicon shortcut link-->
+    <link type="image/x-icon" rel="shortcut icon" href="css/favicon.ico" />
+    <link type="image/x-icon" rel="icon" href="css/favicon.ico" />
+    <!--Declare page as mobile friendly -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- Declare page as iDevice WebApp friendly -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Page Title -->
+    <title>FLUKES</title>
+
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/cluster.css" />
+    <link type="text/css" rel="stylesheet" href="css/summary.css" />
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" rel="stylesheet" href="css/dataTables.bootstrap.css" >
+	<link type="text/css" rel="stylesheet" href="https://derekeder.github.io/csv-to-html-table/css/dataTables.bootstrap.css" >
+    <script type="text/javascript" src="js/d3.v2.js"></script>
+    <script type="text/javascript" src="js/print.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.csv.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.js"></script>
+    <script src="js/csv_to_html_table.js"></script>
+
+
+    <style type="text/css">
+        svg {
+            font: 10px sans-serif;
+        }
+        
+        .background path {
+            fill: none;
+            stroke: #ccc;
+            stroke-opacity: .4;
+            shape-rendering: crispEdges;
+        }
+        
+        .foreground path {
+            fill: none;
+            stroke: steelblue;
+            stroke-opacity: .7;
+        }
+        
+        .brush .extent {
+            fill-opacity: .3;
+            stroke: #fff;
+            shape-rendering: crispEdges;
+        }
+        
+        .axis line,
+        .axis path {
+            fill: none;
+            stroke: #888;
+            shape-rendering: crispEdges;
+        }
+        
+        .axis text {
+            text-shadow: 0 1px 0 #fff;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border: 2px black solid;
+            font: 12px sans-serif;
+			color: #0072ff;
+        }
+        
+        td {
+            border: 1px black solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <nav class="nav-left">
+            <ul id="navigation-left" class="unstyle navigation-left">
+                <li class="item-left"><a class="ico ico-left">Main</a></li>
+                <li class="item-left"><a class="ico ico-left" href="PROTO1.html">Radial</a></li>
+                <li class="item-left"><a class="ico ico-left" href="PROTO2.html">Tree Map</a></li>
+                <li class="item-left"><a class="ico ico-left" href="PROTO3.html">Parallel Map</a></li>
+            </ul>
+            <!-- <span id="btn-hide-nav-mob" class="btn-hide-nav-mob"><img src="images/arrow-up.png" height="16" width="18" alt=""></span> -->
+        </nav>
+
+        <div class="content">
+            <div class="row">
+                <div class="cl12 nobg">
+                    <h1>FLUKES</h1>
+                </div>
+            </div>
+            <!-- Correlation Box -->
+            <div class="row">
+                <div class="cl5">
+                    <div class="box">
+                        <div class="header-box">
+                            <h2>FTP Radial Log Correlation</h2>
+                            <!--<span class="box-controls">&times;</span>-->
+                        </div>
+                        <!-- /.header-box -->
+                        <div id="chart"></div>
+                        <script type="text/javascript" src="js/cluster-radial.js"></script>
+                        <a class="first" id="download" href="#">Generate XML</a>
+                        <a class="first" onclick="printDiv('chart')" href="#" /><img src="images/print.png" height="12" width="12" /></a>
+                        <a class="first" href="PROTO1.html" /><img src="images/window.png" height="12" width="12" /></a>
+                        <div id="line"></div>
+                    </div>
+                </div>
+                <!-- end Correlation Box -->
+                <!-- Json Box -->
+                <div class="row">
+                    <div class="cl6">
+                        <div class="box">
+                            <div class="header-box">
+                                <h2>FTP Radial Rendered Log</h2>
+                                <!--<span class="box-controls">&times;</span>-->
+                            </div>
+                            <!-- /.header-box -->
+
+                            <body ng-app="httptest">
+                                <div ng-controller="getjson">
+                                    <pre>
+					<div style="overflow-y:scroll; overflow-x:hidden; height:50px;" class="json" ng-bind="data | json"></div>
+				  </pre>
+                                </div>
+                                <a class="first" id="download" href="logs.json">View JSON</a>
+                            </body>
+                            </p>
+                            <script src="js/angular.min.js"></script>
+                            <script src="js/jsonextractor.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Json Box -->
+                <!-- Pharallel Box -->
+                <div class="row">
+                    <div class="cl6">
+                        <div class="box">
+                            <div class="header-box">
+                                <h2>FTP Server Log Parallel Coordinates - Brute-force Attack</h2>
+                            </div>
+                            <!-- /.header-box -->
+                            <div id="routes"></div>
+                            <script type="text/javascript" src="js/routes.js"></script>
+                            <a class="first" id="download" href="1.csv">Download CSV</a>
+                            <a class="first" onclick="printDiv('routes')" href="#" /><img src="images/print.png" height="10" width="10" /></a>
+                            <a class="first" href="PROTO3.html" /><img src="images/window.png" height="10" width="10" /></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of first box -->
+                <br/><br/>
+                <!-- Summary Box -->
+                <div class="row">
+                    <div class="c10">
+                        <div class="box">
+                            <div class="header-box">
+                                <h2>RAW Records of Brute-force Attack</h2>
+                            </div>
+                            <!-- /.header-box -->
+                            <!-- This is parsing csv in table to the dashbored -->
+                            <!--<div>
+						<script src="js/d3.v3.min.js"></script>
+						<script src="js/summary.js"></script>
+					</div>-->
+                            <!-- This is the end of parsing the table -->
+
+                            <!------------------------------------------------------------------------->
+                            <Just a saperator file in the document to sagregate the implementation>
+                                <!------------------------------------------------------------------------->
+
+                                <!-- This is a new way to parse csv infromation table -->
+                                <!--<div style="overflow-y:scroll; overflow-x:hidden; height:50px;">
+					<script src="js/d3.v3.min.js"></script>
+					<script type="text/javascript" charset="utf-8">
+						d3.text("1.csv", function(data) {
+							var parsedCSV = d3.csv.parseRows(data);
+
+							var container = d3.select("body")
+								.append("table")
+
+							.selectAll("tr")
+								.data(parsedCSV).enter()
+								.append("tr")
+
+							.selectAll("td")
+								.data(function(d) {
+									return d;
+								}).enter()
+								.append("td")
+								.text(function(d) {
+									return d;
+								});
+						});
+					</script>
+					</div>
+					<!-- This is the end of the parsing csv in table -->
+                                <!------------------------------------------------------------------------->
+                                <Just a saperator file in the document to sagregate the implementation>
+                                    <!------------------------------------------------------------------------->
+                                    
+                                        <br/>
+										<div id='table-container'></div>
+                                        <script>
+                                            function format_link(link) {
+                                                if (link)
+                                                    return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+                                                else
+                                                    return "";
+                                            }
+
+										  CsvToHtmlTable.init({
+											csv_path: '1.csv',
+											element: 'table-container', 
+											allow_download: true,
+											csv_options: {separator: ',', delimiter: '"'},
+											datatables_options: {"paging": false},
+											custom_formatting: [[4, format_link]]
+										  });
+                                        </script>
+                                    
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End of summary Box -->
+            </div>
+            <!-- end of first box -->
+
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main -->
+
+</body>
+
+</html>
