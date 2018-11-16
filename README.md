@@ -1,4 +1,6 @@
 # FLUKES
+[![Maintainability](https://api.codeclimate.com/v1/badges/1044dcea6c955db737b4/maintainability)](https://codeclimate.com/github/5998/FLUKES/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1044dcea6c955db737b4/test_coverage)](https://codeclimate.com/github/5998/FLUKES/test_coverage)
 
 ## About
 This repository is for the replication of our published paper [FLUKES: Autonomous Log Forensics, Intelligence and Visualization Tool] on Conference: International Conference on Future Networks and Distributed Systems ICFNDS '17 at Cambridge University, UK.  For citation use [ACM Digital Library].
