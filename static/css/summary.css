@@ -1,0 +1,17 @@
+table {
+  border-collapse: collapse;
+  font: 12px sans-serif;
+  padding: 5px;
+  border: 1px solid #e0dede;
+  width: 92%;
+  height:200px;
+  overflow-y:scroll;
+  float: right;
+  position: relative;
+  color: #005CB9;
+}
+
+td {
+  border: 1px black solid;
+  padding: 5px;
+}
