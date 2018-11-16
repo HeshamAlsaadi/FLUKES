@@ -26,6 +26,8 @@ This repository is for the replication of our published paper [FLUKES: Autonomou
 
 Our whole pipeline is listed as follows.
 
+<img src="https://raw.githubusercontent.com/5998/FLUKES/master/static/images/FLUKES_Autonomous_Log_Forensics_Intelligence_and_V-5.jpg" width="100%">
+
 ## 1.1 Overview
 An automatic reserved engineering threats detection tool “FLUKS”. The tool optimizes and extracts intelligent threat modules using a special designed machine learning algorithm technique, which allows forensic experts to visualize and explore different threats monitored by firewall, IDS/IPS and anti-virus server attacks. When a content of a file is loaded into FLUKS, a representative summary is executed with least significant attacks. It distinguishes the trace changes found in different attacks arc and re-routes the trails of routes back to origin source of attack. Forensic investigators can then determine a set of certain fields relevant to the attack according to the corresponding target.
 
@@ -101,6 +103,9 @@ to
 ```python
 app.run(host='0.0.0.0', port=80) 
 ``` 
+## 1.4 Screenshot 
+
+<img src="https://raw.githubusercontent.com/5998/FLUKES/master/static/images/FLUKES_Autonomous_Log_Forensics_Intelligence_and_V-7.jpg" width="100%">
 
 [Install virtualenv]: http://flask.pocoo.org/docs/1.0/installation/#install-install-virtualenv
 [venv]: https://docs.python.org/3/library/venv.html#module-venv
